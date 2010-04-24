@@ -1,0 +1,44 @@
+= com.github.sugamasao.browser_utility.Browser Class and Location Class
+
+== Description
+
+provide Browser Class and Location Class.
+
+* Browser Class is check Browser brand and version
+* Location Class is Like JavaScript 'window.location'.
+
+Look for ASDoc.
+* http://sugamasao.github.com/BrowserUtility
+
+== Synopsis
+
+=== use code
+
+
+=== Browser
+
+== options(Browser)
+
+=== Location
+
+== options(Location)
+
+== Features/Problems
+
+* Building OS  MacOSX 
+* Building Compiler FlexSDK 3.4 
+* check browser is Firefox3.6 and safari4.1
+
+== caution
+
+this Program use ExternalInterface.
+See unsupported Browser
+ * http://livedocs.adobe.com/flex/3/langref/flash/external/ExternalInterface.html
+
+== CHANGE LOG
+
+== Copyright
+
+Author:: sugamasao <sugamasao@gmail.com>
+License:: MIT License
+
