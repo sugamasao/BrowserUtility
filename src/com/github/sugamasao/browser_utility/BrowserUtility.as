@@ -1,3 +1,4 @@
+//  -*- coding: utf-8 -*-$
 /**
  * com.github.sugamasao.brouser_utility.BrowserUtility クラス
  * repository : http://github.com/sugamasao/browser_utility
