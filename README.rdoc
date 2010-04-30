@@ -1,10 +1,21 @@
-= com.github.sugamasao.browser_utility.Browser Class and Location Class
+= AS3 to Browser Utility Class.
+
+this Class is ExternalInterface wrapper Interface.
+Flash Page access http://example.com and use Browser IE8
+
+  BrowserUtility.location.href // http://example.com
+  BrowserUtility.browser.isIE  // true or false
+  BrowserUtility.browser.version  // 8
+
+provided class .
+* com.github.sugamasao.browser_utility.BrowserUtility (static class)
+* com.github.sugamasao.browser_utility.Browser
+* com.github.sugamasao.browser_utility.Location
 
 == Description
 
-provide Browser Class and Location Class.
-
-* Browser Class is check Browser brand and version
+* BrowserUtility is Browser and Location Class Creation. from use to ExternalInterface,
+* Browser Class is check Browser brand and version.
 * Location Class is Like JavaScript 'window.location'.
 
 Look for ASDoc.
@@ -15,13 +26,17 @@ Look for ASDoc.
 === use code
 
 
+
+
 === Browser
 
-== options(Browser)
+* browser.isIE // true/false
+* browser.version // 8
 
 === Location
 
-== options(Location)
+* location.href // http://example.com
+* location.hash // #hogehoge
 
 == Features/Problems
 
@@ -32,10 +47,12 @@ Look for ASDoc.
 == caution
 
 this Program use ExternalInterface.
-See unsupported Browser
+See supported Browser
  * http://livedocs.adobe.com/flex/3/langref/flash/external/ExternalInterface.html
 
 == CHANGE LOG
+
+* v1.0 first release.
 
 == Copyright
 

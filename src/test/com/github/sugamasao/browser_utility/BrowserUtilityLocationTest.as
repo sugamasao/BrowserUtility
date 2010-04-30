@@ -5,7 +5,7 @@ package test.com.github.sugamasao.browser_utility
 	import org.hamcrest.*;
 	import org.hamcrest.core.*;
 	import org.hamcrest.text.*;
-	import com.github.sugamasao.browser_utility.BrowserUtility;
+	import com.github.sugamasao.browser_utility.*;
 	import flash.external.ExternalInterface;
 
 	/**
@@ -17,16 +17,22 @@ package test.com.github.sugamasao.browser_utility
 		* セットアップ実施
 		*******************************************************/
 
-    private var location:Object = null;
+		private var _location:Object = null;
 
 		/*
 		 * テスト毎に実行される
 		 */
 		[Before]
 		public function alsoRunBeforeEveryTest():void { 
-      if(ExternalInterface.available) {
-        location = ExternalInterface.call('function(){return window.location;}');
-      }
+			_location = {};
+			_location['hash'] = "#hash";
+			_location['host'] = "http://example.com";
+			_location['hostname'] = "example.com";
+			_location['href'] = "http://example.com/hoge?query=fuga#hash";
+			_location['pathname'] = "/hoge";
+			_location['port'] = "80";
+			_location['protocol'] = "http:";
+			_location['search'] = "?query=fuga";
 		}
 
 		/*
@@ -42,42 +48,51 @@ package test.com.github.sugamasao.browser_utility
 
 		[Test(description="location.hash"), ]
 		public function locationHashTest():void {
-			assertThat(BrowserUtility.location.hash, containsString(location.hash));
+			var location:Location = new Location(_location);
+			assertThat(location.hash, containsString(_location.hash));
 		}
 
 		[Test(description="location.host"), ]
 		public function locationHostTest():void {
-			assertThat(BrowserUtility.location.host, containsString(location.host));
+			var location:Location = new Location(_location);
+			assertThat(location.host, containsString(_location.host));
 		}
 
 		[Test(description="location.hostname"), ]
 		public function locationHostnameTest():void {
-			assertThat(BrowserUtility.location.hostname, containsString(location.hostname));
+			var location:Location = new Location(_location);
+			assertThat(location.hostname, containsString(_location.hostname));
 		}
 
 		[Test(description="location.href"), ]
 		public function locationHrefTest():void {
-			assertThat(BrowserUtility.location.href, containsString(location.href));
+			var location:Location = new Location(_location);
+			assertThat(location.href, containsString(_location.href));
 		}
 
 		[Test(description="location.pathname"), ]
 		public function locationPathnameTest():void {
-			assertThat(BrowserUtility.location.pathname, containsString(location.pathname));
+			var location:Location = new Location(_location);
+			assertThat(location.pathname, containsString(_location.pathname));
 		}
 
 		[Test(description="location.port"), ]
 		public function locationPortTest():void {
-			assertThat(BrowserUtility.location.port, containsString(location.port));
+			var location:Location = new Location(_location);
+			assertThat(location.port, containsString(_location.port));
 		}
 
 		[Test(description="location.protocol"), ]
 		public function locationProtocolTest():void {
-			assertThat(BrowserUtility.location.protocol, containsString(location.protocol));
+			var location:Location = new Location(_location);
+			assertThat(location.protocol, containsString(_location.protocol));
 		}
 
 		[Test(description="location.search"), ]
 		public function locationSearchTest():void {
-			assertThat(BrowserUtility.location.search, containsString(location.search));
+			var location:Location = new Location(_location);
+			trace("hogehoge", location.search)
+			assertThat(location.search, containsString(_location.search));
 		}
 
 	}

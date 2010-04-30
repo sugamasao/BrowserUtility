@@ -129,6 +129,7 @@ package com.github.sugamasao.browser_utility {
 			_pathname = _location.pathname;
 			_port = _location.port;
 			_protocol = _location.protocol;
+			_search = _location.search;
 
 			_init = true;
 		}
