@@ -91,7 +91,6 @@ package test.com.github.sugamasao.browser_utility
 		[Test(description="location.search"), ]
 		public function locationSearchTest():void {
 			var location:Location = new Location(_location);
-			trace("hogehoge", location.search)
 			assertThat(location.search, containsString(_location.search));
 		}
 

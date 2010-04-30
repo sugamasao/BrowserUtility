@@ -1,7 +1,8 @@
 = AS3 to Browser Utility Class.
 
 this Class is ExternalInterface wrapper Interface.
-Flash Page access http://example.com and use Browser IE8
+
+Example. Flash Page access http://example.com and use Browser IE8
 
   BrowserUtility.location.href // http://example.com
   BrowserUtility.browser.isIE  // true or false
@@ -25,18 +26,30 @@ Look for ASDoc.
 
 === use code
 
+use BrowserUtility.location or BrowserUtility.browser.
 
+  BrowserUtility.location.href // http://example.com
+  BrowserUtility.browser.isIE  // true or false
+  BrowserUtility.browser.version  // 8
 
+want browser or location date refresh. use to refreshxxx method.
+
+  BrowserUtility.refresshLocation.href // once agein ExternalInterface to window.location data.
+  BrowserUtility.refreshBrowser.isIE  // once agein ExternalInterface to navigator.userAgent data.
 
 === Browser
 
 * browser.isIE // true/false
 * browser.version // 8
+Look for ASDoc.
+* http://sugamasao.github.com/BrowserUtility
 
 === Location
 
 * location.href // http://example.com
 * location.hash // #hogehoge
+Look for ASDoc.
+* http://sugamasao.github.com/BrowserUtility
 
 == Features/Problems
 
@@ -48,7 +61,7 @@ Look for ASDoc.
 
 this Program use ExternalInterface.
 See supported Browser
- * http://livedocs.adobe.com/flex/3/langref/flash/external/ExternalInterface.html
+* http://livedocs.adobe.com/flex/3/langref/flash/external/ExternalInterface.html
 
 == CHANGE LOG
 
