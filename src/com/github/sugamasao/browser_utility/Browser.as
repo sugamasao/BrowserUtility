@@ -36,7 +36,7 @@ package com.github.sugamasao.browser_utility {
 		// get Browser Version ReExp
 		private const IE_REGEXP:RegExp =/msie\s*(\d+\.\d+)/;
 		private const FIREFOX_REGEXP:RegExp =/firefox\/(\d+\.\d+)/;
-		private const SAFARI_LEGACY_REGEXP:RegExp =/safari\/(\d+\.\d+)/;
+		private const SAFARI_LEGACY_REGEXP:RegExp =/safari\/(.+)/;
 		private const SAFARI_MODERN_REGEXP:RegExp =/version\/(\d+\.\d+)/;
 		private const SAFARI_REGEXP:RegExp =/safari\/(\d+\.\d+)/;
 		private const OPERA_REGEXP:RegExp =/opera[\/\s](\d+\.\d+)/;
@@ -130,25 +130,32 @@ package com.github.sugamasao.browser_utility {
 			}
 
 			var ua:String = _userAgent.toLowerCase();
-
-			// checo browser.
-			if(isBrowserCheckIE(ua)) {
-				_isIE = true;
-				_version = getBrowserVersionIE(ua);
-			} else if(isBrowserCheckFirefox(ua)) {
-				_isFirefox = true;
-				_version = getBrowserVersionFirefox(ua);
-			} else if(isBrowserCheckSafari(ua)) {
-				_isSafari = true;
-				_version = getBrowserVersionSafari(ua);
-			} else if(isBrowserCheckOPERA(ua)) {
-				_isOpera = true;
-				_version = getBrowserVersionOPERA(ua);
-			} else if(isBrowserCheckChrome(ua)) {
-				_isChrome = true;
-				_version = getBrowserVersionChrome(ua);
+			try {
+				// check browser.
+				if(isBrowserCheckIE(ua)) {
+					_isIE = true;
+					_version = getBrowserVersionIE(ua);
+				} else if(isBrowserCheckFirefox(ua)) {
+					_isFirefox = true;
+					_version = getBrowserVersionFirefox(ua);
+				} else if(isBrowserCheckSafari(ua)) {
+					_isSafari = true;
+					_version = getBrowserVersionSafari(ua);
+				} else if(isBrowserCheckOPERA(ua)) {
+					_isOpera = true;
+					_version = getBrowserVersionOPERA(ua);
+				} else if(isBrowserCheckChrome(ua)) {
+					_isChrome = true;
+					_version = getBrowserVersionChrome(ua);
+				}
+			}catch(e:TypeError) {
+				_isIE = false;
+				_isFirefox = false;
+				_isSafari = false;
+				_isOpera = false;
+				_isChrome = false;
+				_version = 0;
 			}
-
 			_init = true;
 		}
 
@@ -159,7 +166,7 @@ package com.github.sugamasao.browser_utility {
 		 * @return true is IE
 		 */
 		private function isBrowserCheckIE(ua:String):Boolean {
-			return (ua.search(IE_STRING) > -1 ? true : false) && (ua.search(OPERA_STRING) == -1)
+			return (ua.search(IE_STRING) != -1) && (ua.search(OPERA_STRING) == -1)
 		}
 
 		/**
@@ -179,7 +186,7 @@ package com.github.sugamasao.browser_utility {
 		 * @return true is Firefox
 		 */
 		private function isBrowserCheckFirefox(ua:String):Boolean {
-			return (ua.search(FIREFOX_STRING) > -1 ? true : false);
+			return (ua.search(FIREFOX_STRING) != -1);
 		}
 
 		/**
@@ -199,7 +206,7 @@ package com.github.sugamasao.browser_utility {
 		 * @return true is Safari
 		 */
 		private function isBrowserCheckSafari(ua:String):Boolean {
-			return (ua.search(SAFARI_STRING) > -1 ? true : false);
+			return (ua.search(SAFARI_STRING) != -1) && (ua.search(CHROME_STRING) == -1);
 		}
 
 		/**
@@ -236,7 +243,7 @@ package com.github.sugamasao.browser_utility {
 		 * @return true is OPERA
 		 */
 		private function isBrowserCheckOPERA(ua:String):Boolean {
-			return (ua.search(OPERA_STRING) > -1 ? true : false);
+			return (ua.search(OPERA_STRING) != -1);
 		}
 
 		/**
@@ -256,7 +263,7 @@ package com.github.sugamasao.browser_utility {
 		 * @return true is Chrome
 		 */
 		private function isBrowserCheckChrome(ua:String):Boolean {
-			return (ua.search(CHROME_STRING) > -1 ? true : false);
+			return (ua.search(CHROME_STRING) != -1);
 		}
 
 		/**
