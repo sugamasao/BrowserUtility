@@ -13,6 +13,9 @@ provided class .
 * com.github.sugamasao.browser_utility.Browser
 * com.github.sugamasao.browser_utility.Location
 
+== Japanese page
+* http://d.hatena.ne.jp/seiunsky/20100430/1272645101
+
 == Description
 
 * BrowserUtility is Browser and Location Class Creation. from use to ExternalInterface,
