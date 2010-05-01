@@ -122,14 +122,14 @@ package com.github.sugamasao.browser_utility {
 			}
 
 			// setting parameters.
-			_hash = _location.hash;
-			_host = _location.host;
-			_hostname = _location.hostname;
-			_href = _location.href;
-			_pathname = _location.pathname;
-			_port = _location.port;
-			_protocol = _location.protocol;
-			_search = _location.search;
+			_hash     = _location.hash ? _location.hash : "";
+			_host     = _location.host ? _location.host : "";
+			_hostname = _location.hostname ? _location.hostname : "";
+			_href     = _location.href ? _location.href : "";
+			_pathname = _location.pathname ? _location.pathname : "";
+			_port     = _location.port ? _location.port : "";
+			_protocol = _location.protocol ? _location.protocol : "";
+			_search   = _location.search ? _location.search : "";
 
 			_init = true;
 		}

@@ -286,6 +286,18 @@ package test.com.github.sugamasao.browser_utility
 		* テスト実施
 		*******************************************************/
 		
+		[Test(description="null test. not Exception rais test"), ]
+		public function browserNullTest():void {
+			var b:Browser = new Browser(null);
+			Assert.assertFalse(b.isIE);
+		}
+
+		[Test(description="empty String test. not Exception rais test"), ]
+		public function browserEmptyTest():void {
+			var b:Browser = new Browser("");
+			Assert.assertFalse(b.isIE);
+		}
+
 		//-------------------
 		// IE
 		//-------------------

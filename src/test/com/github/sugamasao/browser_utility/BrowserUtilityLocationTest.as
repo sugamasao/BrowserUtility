@@ -46,6 +46,19 @@ package test.com.github.sugamasao.browser_utility
 		* テスト実施
 		*******************************************************/
 
+		[Test(description="null test. not Exception rais test"), ]
+		public function locationNullTest():void {
+			var location:Location = new Location(null);
+			Assert.assertEquals(location.hash, "");
+		}
+
+		[Test(description="empty object test. not Exception rais test"), ]
+		public function locationEmptyTest():void {
+			var location:Location = new Location({});
+			Assert.assertEquals(location.hash, "");
+		}
+
+
 		[Test(description="location.hash"), ]
 		public function locationHashTest():void {
 			var location:Location = new Location(_location);
