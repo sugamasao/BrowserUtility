@@ -68,6 +68,7 @@ See supported Browser
 
 == CHANGE LOG
 
+* v1.1 add test case. and add check logic.
 * v1.0 first release.
 
 == Copyright
