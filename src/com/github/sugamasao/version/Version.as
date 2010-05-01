@@ -4,4 +4,5 @@
  * @private
  * Version String.
  */
-public static const VERSION:String  = "v1.0";
+public static const VERSION:String  = "v1.1";
+
