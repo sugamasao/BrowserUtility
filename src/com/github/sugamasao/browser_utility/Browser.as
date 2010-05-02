@@ -34,13 +34,13 @@ package com.github.sugamasao.browser_utility {
 		private const CHROME_STRING:String = "chrome/";
 
 		// get Browser Version ReExp
-		private const IE_REGEXP:RegExp =/msie\s*(\d+\.\d+)/;
-		private const FIREFOX_REGEXP:RegExp =/firefox\/(\d+\.\d+)/;
-		private const SAFARI_LEGACY_REGEXP:RegExp =/safari\/(\d+\.?\d+)/;
-		private const SAFARI_MODERN_REGEXP:RegExp =/version\/(\d+\.?\d+)/;
-		private const SAFARI_REGEXP:RegExp =/safari\/(\d+\.\d+)/;
-		private const OPERA_REGEXP:RegExp =/opera[\/\s](\d+\.\d+)/;
-		private const CHROME_REGEXP:RegExp =/chrome\/(\d+\.\d+)/;
+		private const IE_REGEXP:RegExp =/msie\s*(\d*\.?\d*)/;
+		private const FIREFOX_REGEXP:RegExp =/firefox\/(\d*\.?\d*)/;
+		private const SAFARI_LEGACY_REGEXP:RegExp =/safari\/(\d*\.?\d*)/;
+		private const SAFARI_MODERN_REGEXP:RegExp =/version\/(\d*\.?\d*)/;
+		private const SAFARI_REGEXP:RegExp =/safari\/(\d*\.?\d*)/;
+		private const OPERA_REGEXP:RegExp =/opera[\/\s](\d*\.?\d*)/;
+		private const CHROME_REGEXP:RegExp =/chrome\/(\d*\.?\d*)/;
 
 		/**
 		 * create Browser.
