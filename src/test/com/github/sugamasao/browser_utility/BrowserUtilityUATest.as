@@ -403,6 +403,30 @@ package test.com.github.sugamasao.browser_utility
 			}
 		}
 
+		//-------------------
+		// isUnknown
+		//-------------------
+		[Test(description="isUnknown flaf and version tests."), ]
+		public function UserAgentUnknownTest():void {
+			var b:Browser = new Browser("isUnknown test.");
+			Assert.assertTrue(b.isUnknown);
+			Assert.assertEquals(b.version, 0);
+		}
+		//-------------------
+		// get userAgent test.
+		//-------------------
+		[Test(description="get UserAgent tests."), ]
+		public function UserAgentGetterTest():void {
+			var uaString:String = "hogehoge";
+			var b:Browser = new Browser(uaString);
+			Assert.assertEquals(b.userAgent, uaString);
+		}
+
+		[Test(description="get UserAgent null tests."), ]
+		public function UserAgentGetterNullTest():void {
+			var b:Browser = new Browser(null);
+			Assert.assertEquals(b.userAgent, null);
+		}
 
 	}
 }

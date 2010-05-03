@@ -20,6 +20,7 @@ package com.github.sugamasao.browser_utility {
 		private var _isSafari:Boolean = false;
 		private var _isChrome:Boolean = false;
 		private var _isOpera:Boolean = false;
+		private var _isUnknown:Boolean = false;
 		private var _version:Number = 0;
 
 		//----------------------------
@@ -108,6 +109,17 @@ package com.github.sugamasao.browser_utility {
 		}
 
 		/**
+		 * isKnown?.
+		 *
+		 * @return true is browser check faild.
+		 * @default false
+		 */
+		public function get isUnknown():Boolean {
+			parse();
+			return _isUnknown;
+		}
+
+		/**
 		 * browser Version.
 		 * is Version Number is UA writing Version.
 		 *
@@ -117,6 +129,16 @@ package com.github.sugamasao.browser_utility {
 		public function get version():Number {
 			parse();
 			return _version;
+		}
+
+		/**
+		 * set UserAgent getter.
+		 *
+		 * @return UserAgent(String)
+		 * @default null
+		 */
+		public function get userAgent():String {
+			return _userAgent;
 		}
 
 		/**
@@ -147,6 +169,8 @@ package com.github.sugamasao.browser_utility {
 				} else if(isBrowserCheckChrome(ua)) {
 					_isChrome = true;
 					_version = getBrowserVersionChrome(ua);
+				} else {
+					_isUnknown = true;
 				}
 			}catch(e:TypeError) {
 				_isIE = false;
@@ -154,6 +178,7 @@ package com.github.sugamasao.browser_utility {
 				_isSafari = false;
 				_isOpera = false;
 				_isChrome = false;
+				_isUnknown = true;
 				_version = 0;
 			}
 			_init = true;
