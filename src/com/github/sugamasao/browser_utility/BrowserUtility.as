@@ -106,7 +106,7 @@ package com.github.sugamasao.browser_utility {
 		/**
 		 * toString.
 		 * 
-		 * @return <code>Location</code> instance.
+		 * @return String
 		 */
 		public static function toString():String {
 			var array:Array = [];
