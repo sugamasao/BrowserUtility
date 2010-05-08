@@ -428,5 +428,35 @@ package test.com.github.sugamasao.browser_utility
 			Assert.assertEquals(b.userAgent, null);
 		}
 
+		/**
+		 * toString
+		 */
+		[Test(description="toString"), ]
+		public function toString1Test():void {
+			var uaString:String = "hogehoge";
+			var b:Browser = new Browser(uaString);
+			assertThat(b.toString(), containsString("Browser"));
+			assertThat(b.toString(), containsString("UserAgent=" + uaString));
+			assertThat(b.toString(), containsString("isIE=false"));
+			assertThat(b.toString(), containsString("isFirefox=false"));
+			assertThat(b.toString(), containsString("isSafari=false"));
+			assertThat(b.toString(), containsString("isChrome=false"));
+			assertThat(b.toString(), containsString("isOpera=false"));
+			assertThat(b.toString(), containsString("isUnknown=false"));
+			assertThat(b.toString(), containsString("version=0"));
+		}
+
+		[Test(description="toString"), ]
+		public function toString2Test():void {
+			var uaString:String = null;
+			var b:Browser = new Browser(uaString);
+			assertThat(b.toString(), containsString("Browser"));
+			assertThat(b.toString(), containsString("UserAgent=null"));
+		}
+
+
+
+
+
 	}
 }

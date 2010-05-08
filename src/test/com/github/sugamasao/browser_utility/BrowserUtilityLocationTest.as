@@ -107,5 +107,36 @@ package test.com.github.sugamasao.browser_utility
 			assertThat(location.search, containsString(_location.search));
 		}
 
+		/*********************
+		* toString Test
+		**********************/
+		[Test(description="toString"), ]
+		public function toString1Test():void {
+			var location:Location = new Location(_location);
+			assertThat(location.toString(), containsString("Location"));
+			assertThat(location.toString(), containsString("location[hash]=" + _location["hash"]));
+			assertThat(location.toString(), containsString("location[host]=" + _location["host"]));
+			assertThat(location.toString(), containsString("location[hostname]=" + _location["hostname"]));
+			assertThat(location.toString(), containsString("location[href]=" + _location["href"]));
+			assertThat(location.toString(), containsString("location[pathname]=" + _location["pathname"]));
+			assertThat(location.toString(), containsString("location[port]=" + _location["port"]));
+			assertThat(location.toString(), containsString("location[protocol]=" + _location["protocol"]));
+			assertThat(location.toString(), containsString("location[search]=" + _location["search"]));
+		}
+		[Test(description="toString"), ]
+		public function toString2Test():void {
+			_location["hash"] = null;
+			var location:Location = new Location(_location);
+			assertThat(location.toString(), containsString("Location"));
+			assertThat(location.toString(), containsString("location[hash]=null"));
+		}
+
+		[Test(description="toString"), ]
+		public function toString3Test():void {
+			var location:Location = new Location(null);
+			assertThat(location.toString(), containsString("Location"));
+			assertThat(location.toString(), containsString("location = null"));
+		}
+
 	}
 }

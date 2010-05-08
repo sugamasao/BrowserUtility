@@ -6,6 +6,7 @@
 package com.github.sugamasao.browser_utility {
 
 	import flash.external.ExternalInterface;
+	import flash.utils.getQualifiedClassName;
 
 	/**
 	 * BrowserUtility Class(static class).
@@ -99,6 +100,19 @@ package com.github.sugamasao.browser_utility {
 		public static function get refreshLocation():Location {
 			_location = null;
 			return location;
+		}
+
+		
+		/**
+		 * toString.
+		 * 
+		 * @return <code>Location</code> instance.
+		 */
+		public static function toString():String {
+			var array:Array = [];
+			array.push(getQualifiedClassName(BrowserUtility));
+			array.push("version=" + VERSION);
+			return array.join(" ");
 		}
 
 		private static function createBrowser():Browser {

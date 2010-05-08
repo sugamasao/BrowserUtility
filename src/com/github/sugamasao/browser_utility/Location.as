@@ -4,6 +4,9 @@
  * repository : http://github.com/sugamasao/browser_utility
  */
 package com.github.sugamasao.browser_utility {
+
+	import flash.utils.getQualifiedClassName;
+
 	/**
 	 * Location Class.
 	 * 
@@ -34,7 +37,7 @@ package com.github.sugamasao.browser_utility {
 		/**
 		 * getting JS location.hash.
 		 * 
-		 * return: location.hash.
+		 * @return location.hash.
 		 */
 		public function get hash():String {
 			parse();
@@ -44,7 +47,7 @@ package com.github.sugamasao.browser_utility {
 		/**
 		 * getting JS location.host.
 		 * 
-		 * return: location.host.
+		 * @return location.host.
 		 */
 		public function get host():String {
 			parse();
@@ -54,7 +57,7 @@ package com.github.sugamasao.browser_utility {
 		/**
 		 * getting JS location.hostname.
 		 * 
-		 * return: location.hostname.
+		 * @return location.hostname.
 		 */
 		public function get hostname():String {
 			parse();
@@ -64,7 +67,7 @@ package com.github.sugamasao.browser_utility {
 		/**
 		 * getting JS location.href.
 		 * 
-		 * return: location.href.
+		 * @return location.href.
 		 */
 		public function get href():String {
 			parse();
@@ -74,7 +77,7 @@ package com.github.sugamasao.browser_utility {
 		/**
 		 * getting JS location.pathname.
 		 * 
-		 * return: location.hostname.
+		 * @return location.hostname.
 		 */
 		public function get pathname():String {
 			parse();
@@ -84,7 +87,7 @@ package com.github.sugamasao.browser_utility {
 		/**
 		 * getting JS location.port.
 		 * 
-		 * return: location.port.
+		 * @return location.port.
 		 */
 		public function get port():String {
 			parse();
@@ -94,7 +97,7 @@ package com.github.sugamasao.browser_utility {
 		/**
 		 * getting JS location.protocol.
 		 * 
-		 * return: location.protocol.
+		 * @return location.protocol.
 		 */
 		public function get protocol():String {
 			parse();
@@ -104,11 +107,31 @@ package com.github.sugamasao.browser_utility {
 		/**
 		 * getting JS location.search.
 		 * 
-		 * return: location.search.
+		 * @return location.search.
 		 */
 		public function get search():String {
 			parse();
 			return _search;
+		}
+
+		/**
+		 * toString.
+		 * 
+		 * @return String
+		 */
+		public function toString():String {
+			var array:Array = [];
+			array.push(getQualifiedClassName(this));
+			if(_location) {
+				for (var key:String in _location) {
+					var value:String = _location[key] ? _location[key] : "null";
+					array.push("location[" + key + "]=" + value);
+				}
+			} else {
+				array.push("location = null");
+			}
+
+			return array.join(" ");
 		}
 
 		/**

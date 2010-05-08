@@ -5,6 +5,8 @@
  */
 package com.github.sugamasao.browser_utility {
 
+	import flash.utils.getQualifiedClassName;
+
 	/**
 	 * Browser Class.
 	 * 
@@ -139,6 +141,31 @@ package com.github.sugamasao.browser_utility {
 		 */
 		public function get userAgent():String {
 			return _userAgent;
+		}
+
+		/**
+		 * toString.
+		 *
+		 * @return String
+		 */
+		public function toString():String {
+			var array:Array = [];
+			
+			array.push(getQualifiedClassName(this));
+			if(_userAgent) {
+				array.push("UserAgent=" + _userAgent);
+				array.push("isIE=" + _isIE);
+				array.push("isFirefox=" + _isFirefox);
+				array.push("isSafari=" + _isSafari);
+				array.push("isChrome=" + _isChrome);
+				array.push("isOpera=" + _isOpera);
+				array.push("isUnknown=" + _isUnknown);
+				array.push("version=" + _version);
+			} else {
+				array.push("UserAgent=" + null);
+			}
+
+			return array.join(" ");
 		}
 
 		/**

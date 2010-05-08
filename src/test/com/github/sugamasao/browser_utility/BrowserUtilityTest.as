@@ -34,13 +34,6 @@ package test.com.github.sugamasao.browser_utility
 		* テスト実施
 		*******************************************************/
 
-		[Test(description="null test. not Exception rais test"), ]
-		public function locationNullTest():void {
-			var b1:Browser = new Browser("");
-			var b2:Browser = new Browser("");
-			Assert.assertEquals(b1, b1);
-		}
-
 		[Test(description="location object create"), ]
 		public function locationCreateTest():void {
 			Assert.assertTrue(BrowserUtility.location is Location)
@@ -66,6 +59,11 @@ package test.com.github.sugamasao.browser_utility
 		[Test(description="version test"), ]
 		public function versionTest():void {
 			assertThat(BrowserUtility.VERSION, containsString("v"));
+		}
+
+		[Test(description="toString test"), ]
+		public function toStringTest():void {
+			assertThat(BrowserUtility.toString(), containsString("BrowserUtility version=v"));
 		}
 
 
