@@ -1,4 +1,4 @@
-//  -*- coding: utf-8 -*-$
+// # -*- coding: utf-8 -*-$
 /**
  * com.github.sugamasao.brouser_utility.BrowserUtility クラス
  * repository : http://github.com/sugamasao/browser_utility
@@ -27,7 +27,7 @@ package com.github.sugamasao.browser_utility {
 	public class BrowserUtility {
 
 		// include Version file. "public const VERSION
-		include "./../version/Version.as";
+		include "./../version/BrowserUtilityVersion.as";
 
 		private static var _browser:Browser = null;
 		private static var _location:Location = null;
@@ -42,7 +42,7 @@ package com.github.sugamasao.browser_utility {
 		}
 
 		/**
-		 * get browser object propertie.
+		 * get browser object property.
 		 *
 		 * createBrowser() called ExternalInterface
 		 *
@@ -58,7 +58,7 @@ package com.github.sugamasao.browser_utility {
 		}
 
 		/**
-		 * get location object propertie.
+		 * get location object property.
 		 * 
 		 * createBrowser() called ExternalInterface
 		 *

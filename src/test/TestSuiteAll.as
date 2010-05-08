@@ -7,6 +7,6 @@ package test {
 	public class TestSuiteAll {
 		public var t1:BrowserUtilityUATest;
 		public var t2:BrowserUtilityLocationTest;
-
+		public var t3:BrowserUtilityTest;
 	}
 }
