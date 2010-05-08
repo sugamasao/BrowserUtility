@@ -110,8 +110,12 @@ package com.github.sugamasao.browser_utility {
 		 */
 		public static function toString():String {
 			var array:Array = [];
+			var b:String = _browser ? _browser.toString() : "null";
+			var l:String = _location ? _location.toString() : "null";
 			array.push(getQualifiedClassName(BrowserUtility));
 			array.push("version=" + VERSION);
+			array.push("@location=" + l)
+			array.push("@browser=" + b);
 			return array.join(" ");
 		}
 

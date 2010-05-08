@@ -64,6 +64,8 @@ package test.com.github.sugamasao.browser_utility
 		[Test(description="toString test"), ]
 		public function toStringTest():void {
 			assertThat(BrowserUtility.toString(), containsString("BrowserUtility version=v"));
+			assertThat(BrowserUtility.toString(), containsString("@location="));
+			assertThat(BrowserUtility.toString(), containsString("@browser="));
 		}
 
 
