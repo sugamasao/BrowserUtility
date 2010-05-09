@@ -68,6 +68,7 @@ See supported Browser
 
 == CHANGE LOG
 
+* v1.3.1 add UA Test Case. IE Tests.
 * v1.3 implement toString.
 * v1.2 get Browser Version logic modified. and add by isUnknown flag and userAgent getter.
 * v1.1 add test case. and add check logic.
